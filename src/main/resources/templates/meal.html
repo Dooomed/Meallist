@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Meal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/allStyle.css">
+</head>
+<body>
+<header th:insert="header ::header" class="header"></header>
+
+<div class="container">
+    <form>
+        <h1 th:text="${meal.getName()}"></h1>
+        <b>Вес(г): <p th:text="${meal.getWeight()}"></p></b>
+        <b>Цена(грн): <p th:text="${meal.getPrice()}"></p></b>
+        <form th:method="GET" th:href="${meal.id} + '/edit'">
+            <input type="submit" value="Изменить" class="button">
+        </form>
+        <br>
+        <form th:method="POST" th:action="@{/meal/{id}(id=${meal.id})}">
+            <input type="submit" value="Удалить" class="button">
+        </form>
+    </form>
+</div>
+</body>
+</html>

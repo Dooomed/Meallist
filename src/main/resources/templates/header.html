@@ -1,0 +1,26 @@
+<div th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml" class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="../image/food.png" width="70" height="70" alt="Picture" class="icon-image">
+            </a>
+        </nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/meal/all">Блюда</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/meal/create">Новое блюдо</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/order/create">Новый заказ</a>
+                </li>
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="Выйти" class="btn">
+                </form>
+            </ul>
+        </div>
+    </nav>
+</div>

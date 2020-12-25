@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All meals</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/allMeals.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/allStyle.css">
+</head>
+<body>
+
+    <header th:insert="header ::header" class="header"></header>
+    <br>
+    <div class="container">
+        <form th:each="meal : ${meals}">
+            <div class="container-body" onclick="">
+                <h1 th:text="${meal.name}"></h1>
+                <b>Вес:<p th:text="${meal.weight}"></p></b>
+                <p th:text="${meal.price}"></p>
+                <a th:href="${meal.id}">Посмотреть</a>
+            </div>
+        </form>
+        </div>
+</body>
+</html>

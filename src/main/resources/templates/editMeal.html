@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit meal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/allStyle.css">
+</head>
+<body>
+<header th:insert="header ::header" class="header"></header>
+<div class="container">
+    <form method="post">
+        <input type="text" th:value="${meal.name}" name="name" class="input">
+        <input type="number" th:value="${meal.weight}" name="weight" class="input">
+        <input type="number" th:value="${meal.price}" name="price" class="input">
+        <button type="submit" class="btn">Submit</button>
+        <br>
+    </form>
+</div>
+</body>
+</html>
